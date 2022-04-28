@@ -8,7 +8,7 @@ docker run cloudflare/cloudflared:2022.4.1 tunnel --no-autoupdate run --token 12
 
 The important part here is the token `1234567890abcdefghijklmnopqrstuvwxyz`. This is secret, so you cannot just paste it in the docker-compose file/push it to github.
 
-Instead, you can set the environment variable `TUNNEL_TOKEN` to this value. You can do that via an `.env` file, or any other way you wish. 
+Instead, you can set the environment variable `TUNNEL_TOKEN` to this value. You can do that via an `.env` file, or any other supported way. 
 `cloudflared` reads this env value and uses it as if it were provided via CLI.
 
 # Example
@@ -32,7 +32,7 @@ services:
 TUNNEL_TOKEN=1234567890abcdefghijklmnopqrstuvwxyz
 ```
 
-Now you can start and destroy your docker-compose project anytime and the tunnel will be active only when compose is running.
+Now you can start and destroy your docker-compose project anytime and the tunnel will be active only when the container is running.
 
 You can see the 2 files in this repo as well. Replace the contents inside `.env` then run `docker-compose up`.
 
